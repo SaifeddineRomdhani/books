@@ -1,0 +1,25 @@
+{% block body %}  
+    <h1>Liste des Auteurs par Email</h1>
+
+    <table class="table" style="border:solid 2px black;">
+        <thead>
+            <tr>
+                <th style="padding:25px;border:solid 2px black;">id</th>
+                <th style="padding:25px;border:solid 2px black;">Nom d'utilisateur</th>
+                <th style="padding:25px;border:solid 2px black;">Email</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td style="padding:25px;border:solid 2px black;">{{ author.id}}</td>
+                    <td style="padding:25px;border:solid 2px black;">{{ author.username }}</td>
+                    <td style="padding:25px;border:solid 2px black;">{{ author.email }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

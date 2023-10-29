@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+search_books:
+    path: /search/books
+    controller: App\Controller\BookController::searchBooks
+
+listAuthorsByEmail:
+    path: /authors
+    controller: App\Controller\AuthorController::listAuthorsByEmail

@@ -1,0 +1,24 @@
+<h1>Liste des Livres Publiés avant 2023</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Titre</th>
+                <th>Catégorie</th>
+                <th>Date de Publication</th>
+                <th>Auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.ref }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.publicationDate|date('d-m-Y') }}</td>
+                    <td>{{ book.author.username }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>

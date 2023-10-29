@@ -1,0 +1,30 @@
+<h1>Liste des Livres</h1>
+
+    <form method="post" action="{{ path('search_books') }}">
+        <label for="ref">Recherche par Référence (ref) :</label>
+        <input type="text" id="ref" name="ref">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Titre</th>
+                <th>Catégorie</th>
+                <th>Date de Publication</th>
+                <th>Publié</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.ref }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.publicationDate|date('d-m-Y') }}</td>
+                    <td>{{ book.published ? 'Oui' : 'Non' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
